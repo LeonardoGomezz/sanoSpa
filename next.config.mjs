@@ -1,4 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+/* eslint-disable no-unused-vars */
+// next.config.js
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+import nextTranslate from 'next-translate-plugin'
+
+const nextConfig = nextTranslate({
+  webpack: (config, { isServer, webpack }) => {
+    return config
+  }
+})
+
+export default nextConfig
